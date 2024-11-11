@@ -5,7 +5,7 @@ import { EyeOutlined, HeartFilled, HeartOutlined } from "@ant-design/icons";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import request from "../axios";
 import useStore from "../zustand";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { message } from "antd";
 
 function Grid({ data }: any) {
@@ -44,7 +44,9 @@ function Grid({ data }: any) {
       }}
     >
       {contextHolder}
-      <img className="rounded-t-lg" src={image} alt="" />
+      <Link to={id}>
+        <img className="rounded-t-lg w-full" src={image} alt="" />
+      </Link>
       <h2 style={{ color: "#161A1D", fontSize: "20px", margin: "5px" }}>
         {title}
       </h2>

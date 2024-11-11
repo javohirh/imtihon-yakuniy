@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import request from "../axios";
 import { message } from "antd";
 import useStore from "../zustand";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function List({ data }: any) {
   const { token } = useStore();
@@ -46,19 +46,21 @@ function List({ data }: any) {
       }}
     >
       {contextHolder}
-      <img
-        className="rounded-s-lg"
-        style={{ width: "25%" }}
-        src={image}
-        alt=""
-      />
+      <Link className="w-[30%] !h-full block" to={id}>
+        <img
+          className="rounded-s-lg !h-full"
+          style={{ width: "100%" }}
+          src={image}
+          alt=""
+        />
+      </Link>
       <div style={{ margin: "0px 20px ", width: "75%" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            marginBottom: "40px",
+            marginBottom: "28px",
           }}
         >
           <h2 style={{ color: "#161A1D", fontSize: "25px", margin: "5px" }}>

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import Favourite from "./pages/Favourite";
 import ProfileEdit from "./pages/Profile";
+import SinglePage from "./pages/SinglePage";
 
 const routes = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const routes = createBrowserRouter([
       { path: "form", element: <FormPage /> },
       { path: "favourite", element: <Favourite /> },
       { path: "profile", element: <ProfileEdit /> },
+      { path: ":id", element: <SinglePage /> },
     ],
   },
   {

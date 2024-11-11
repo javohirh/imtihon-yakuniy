@@ -45,7 +45,7 @@ const HomePage = () => {
   }
   const startIndex = (currentPage - 1) * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
-  const currentItems = data.slice(startIndex, endIndex);
+  const currentItems = data && data.slice(startIndex, endIndex);
   return (
     <div>
       <Tab title="Топ объявления" setTab={setTab} />{" "}

@@ -32,6 +32,14 @@ const useStore = create<Store>()(
       setPhone: (e: string) => set((state) => ({ ...state, phone: e })),
       setName: (e: string) => set((state) => ({ ...state, name: e })),
       setToken: (e: string) => set((state) => ({ ...state, token: e })),
+      clearAll: () =>
+        set((state) => ({
+          ...state,
+          phone: null,
+          name: null,
+          count: 0,
+          token: null,
+        })),
     }),
     {
       name: "user-storage",

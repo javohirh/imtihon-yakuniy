@@ -2,7 +2,6 @@ import { Form, Input, Button, Menu, Typography, Divider, Space } from "antd";
 import {
   UserOutlined,
   ProfileOutlined,
-  HeartOutlined,
   DollarOutlined,
   IdcardOutlined,
   TagsOutlined,
@@ -10,21 +9,28 @@ import {
   LogoutOutlined,
 } from "@ant-design/icons";
 import useStore from "../zustand";
+import { Link, useNavigate } from "react-router-dom";
+import { IoIosHeart, IoMdHeartEmpty } from "react-icons/io";
 
 const { Title, Text } = Typography;
 
 const ProfileEdit = () => {
   const [form] = Form.useForm();
-  const { name, setName, setPhone, phone, clearAll } = useStore();
+  const { count, name, setName, setPhone, phone, clearAll } = useStore();
   const handleFinish = (values: any) => {
     console.log("Form Values:", values);
     setName(values.name);
     setPhone(values.phone);
   };
-
+  const navigate = useNavigate();
+  const handleDelete = () => {
+    localStorage.clear();
+    clearAll();
+    navigate("/");
+  };
   return (
     <div
-      className="rounded-xl"
+      className="!rounded-xl !rounded-tl-xl "
       style={{
         display: "flex",
         backgroundColor: "#f7f7f7",
@@ -44,9 +50,27 @@ const ProfileEdit = () => {
         <Menu.Item key="2" icon={<ProfileOutlined />}>
           Мои объявления
         </Menu.Item>
-        <Menu.Item key="3" icon={<HeartOutlined />}>
-          Избранное
-        </Menu.Item>
+        <Link to={"/favourite"}>
+          <Menu.Item
+            style={{ display: "flex" }}
+            key="3"
+            icon={
+              <div className="relative inline-block">
+                {count === 0 ? (
+                  <IoMdHeartEmpty size={"1.5rem"} />
+                ) : (
+                  <IoIosHeart color="red" size={"1.5rem"} />
+                )}
+
+                <span className="absolute z-20 count text-[10px]  top-[-28px] right-[-3px]">
+                  {count}
+                </span>
+              </div>
+            }
+          >
+            Избранное
+          </Menu.Item>
+        </Link>
         <Menu.Item key="4" icon={<DollarOutlined />}>
           Баланс: 10,000 UZS
         </Menu.Item>
@@ -60,10 +84,10 @@ const ProfileEdit = () => {
           Отзывы
         </Menu.Item>
         <Menu.Item
-          onClick={clearAll}
+          onClick={handleDelete}
           key="8"
-          icon={<LogoutOutlined />}
-          style={{ color: "red" }}
+          icon={<LogoutOutlined style={{ color: "red" }} />}
+          className="!top-20 profile-exit"
         >
           Выйти из аккаунта
         </Menu.Item>
@@ -82,7 +106,7 @@ const ProfileEdit = () => {
         </Title>
 
         <Form
-          className="!w-[300px]"
+          className="!w-[320px]"
           form={form}
           layout="vertical"
           onFinish={handleFinish}
@@ -121,7 +145,7 @@ const ProfileEdit = () => {
         </div>
 
         <Space
-          className="mb-6 w-[300px]"
+          className="mb-6 w-[320px]"
           direction="vertical"
           style={{ marginTop: "10px" }}
         >
