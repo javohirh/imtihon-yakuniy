@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Roboto;
+  src: url("./assets//fonts//Roboto-Regular.ttf");
+}
+body {
+  background-color: #fff;
+  font-family: "Roboto", serif !important;
+}
+.ant-layut {
+  font-family: "Roboto" !important;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.sidebar-title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #161a1d;
+  margin: 30px 6px;
+}
+.sidebar-flex {
+  margin-bottom: 30px;
+}
+
+.ant-select-selection-item {
+  font-size: 12px;
+  color: #161a1d;
+}
+.ant-space-item:hover {
+  background-color: #fca311;
+}
+.ant-menu-item,
+.ant-menu-submenu-title {
+  background-color: #f3f3f3 !important;
+  transition: background-color 0.3s ease;
+}
+
+.ant-menu-item:hover {
+  background-color: #fca311 !important;
+}
+
+.ant-menu-item-selected {
+  background-color: #d0d0d0;
+}
+
+.custom-select .ant-select-selector {
+  background-color: #f0f0f0 !important;
+  border-color: #d9d9d9 !important;
+}
+
+.custom-select .ant-select-selector:hover {
+  background-color: #fba073 !important;
+}
+
+.ant-collapse-expand-icon {
+  display: none !important;
+}
+
+.ant-input-affix-wrapper {
+  width: 300px;
+  max-height: 40px !important;
+  background-color: #f3f3f3;
+}
+
+.header-content {
+  display: flex;
+
+  max-width: 850px;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+.header-main {
+  display: flex;
+  gap: 25px;
+}
+
+.ant-pagination-item {
+  background-color: transparent !important;
+}
+.ant-pagination-item-link {
+  background-color: #fba073 !important;
+}
+.ant-pagination-item-link:hover,
+.ant-pagination-item:hover {
+  background-color: #fba073 !important;
+}
+.ant-input-affix-wrapper-focused {
+  border-color: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.wave {
+  width: 100%;
+  height: 150px;
+  background-color: #fdb541;
+  clip-path: path("M0,100 C150,50 350,150 500,100 L700,0 L0,0 Z");
+}
+.ant-form-item-required::before {
+  content: none !important;
+}
+
+.ant-otp .ant-input-outlined {
+  border: none !important;
+  border-bottom: 2px solid #999999 !important;
+  border-radius: 0 !important;
+}
+
+.count {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  background-color: #fca311;
+  border-radius: 2px;
+  color: #000000;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.profile .ant-menu-item {
+  background-color: #fff !important;
+  font-weight: 500 !important;
+  color: #161a1d !important;
+  margin-top: 12px !important;
+}
