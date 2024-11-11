@@ -44,7 +44,7 @@ function Grid({ data }: any) {
       }}
     >
       {contextHolder}
-      <Link to={id}>
+      <Link onClick={() => navigate(`/${id}`)} to={""}>
         <img className="rounded-t-lg w-full" src={image} alt="" />
       </Link>
       <h2 style={{ color: "#161A1D", fontSize: "20px", margin: "5px" }}>

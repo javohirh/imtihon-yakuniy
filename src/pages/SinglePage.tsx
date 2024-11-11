@@ -20,8 +20,6 @@ const SinglePage = () => {
     request.get(`/products/${id}`).then((data) => setProducts(data.data));
   }, []);
 
-  console.log(products);
-
   return (
     <>
       {products && (

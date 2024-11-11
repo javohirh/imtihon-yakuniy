@@ -46,7 +46,11 @@ function List({ data }: any) {
       }}
     >
       {contextHolder}
-      <Link className="w-[30%] !h-full block" to={id}>
+      <Link
+        onClick={() => navigate(`/${id}`)}
+        className="w-[30%] !h-full block"
+        to={""}
+      >
         <img
           className="rounded-s-lg !h-full"
           style={{ width: "100%" }}
